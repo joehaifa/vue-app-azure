@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_0398da8feb124ca08b2418a00eb78056 }}/joehaifa/vue-app:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_0398da8feb124ca08b2418a00eb78056 }}/joehaifa/projet:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'MonAppService'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_6c40664e6b1144199c5fef9fa2a099cc }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_0398da8feb124ca08b2418a00eb78056 }}/joehaifa/vue-app:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_0398da8feb124ca08b2418a00eb78056 }}/joehaifa/projet:${{ github.sha }}'
